@@ -15,6 +15,9 @@ public class questions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner kb = new Scanner(System.in);
+		
+		String pronoun = null;
+		
 		System.out.println("hey, thanks for coming.");
 		delay(2000);
 		System.out.println("soo... how do i spell your name?");
@@ -22,13 +25,12 @@ public class questions {
 		System.out.println("cool, lemme get a sec to write that down");
 		delay(2000);
 		System.out.println("just to be PC, could you please specify your gender/sex");
-		String gender = kb.nextLine();
-		String pronoun = null;
+		String gender = kb.nextLine();		
 		if(gender.equalsIgnoreCase("male"))pronoun = "He";
 		if(gender.equalsIgnoreCase("Female"))pronoun = "She";
 		if(!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female"))pronoun = "genderneutral";
 		System.out.println(" well " + name + " where are you from?");
-		String location = kb.nextLine();
+		String home = kb.nextLine();
 		delay(1000);
 		System.out.println("no way, I went there once");
 		delay(400);
@@ -91,14 +93,9 @@ public class questions {
 					
 			System.out.println("there there, I hear " + randomajor + " is a good major ");
 		}
+		brother newBrother = new brother(name, gender, year, home, major);
 		
-		
-		System.out.println(".");
-		System.out.println(".");
-		System.out.println(".");
-		System.out.println(".");
-		System.out.println(".");
-		System.out.println(name + " is a " + year +" " + major + " from " + location + "." + pronoun + " came to USC because " + reason + ".");
+		System.out.println(newBrother.closingParagraph());
 		
 		
 	}
